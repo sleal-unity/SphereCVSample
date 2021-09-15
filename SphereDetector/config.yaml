@@ -1,0 +1,40 @@
+device: 'cuda'
+adam_optimizer:
+  learning_rate: 0.0001
+  beta_1: 0.9
+  beta_2: 0.999
+train:
+  data_root: "data/synthetic/path_traced/train/test2"
+  batch_size: 10
+  epochs: 50
+  start_from_epoch: 10
+val:
+  data_root: "data/synthetic/path_traced/validation/test2"
+  batch_size: 10
+  eval_freq: 5
+real:
+  data_root: "data/real/video/magenta_ball_real.mp4"
+coco:
+  train:
+    data_root: "data/real/phone"
+  val:
+    data_root: "data/real/webcam"
+checkpoint:
+  models_directory: 'models'
+  model_save_frequency: 1
+dataset:
+  input_resolution: 224
+  source_resolution: 512
+test:
+#  data_root: "data/real/phone"
+  data_root: "data/synthetic/path_traced/validation/test2"
+  batch_size: 10
+#  validation_model_path: "models/00_rasterized_models/25.pt"
+#  validation_model_path: "models/01_ray_traced_trained_models/44.pt"
+#  validation_model_path: "models/02_real_only_models/17.pt"
+  validation_model_path: "models/03_whole_pipeline_test1/25.pt"
+#  validation_model_path: "models/04_path_traced_test2/15.pt"
+#  validation_model_path: "models/05_path_traced_plus_real/26.pt"
+#  validation_model_path: "models/06_path+real+webcam/35.pt"
+#  validation_model_path: "models/07_real_only/11.pt"
+#  validation_model_path: "models/08_real+webcam/39.pt"
